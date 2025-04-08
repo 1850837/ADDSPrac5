@@ -1,11 +1,12 @@
 #include "BubbleSort.h"
+#include "QuickSort.h"
 #include <iostream>
 
 int main(){
 
-    std::vector<int> list = {9, 8, 7, 6, 0, 3, 5, 2};
+    std::vector<int> list = {4, 5, 7, 9, 2, 5, 7, 3};
 
-    BubbleSort a = BubbleSort();
+    QuickSort a;
 
     list = a.sort(list);
 

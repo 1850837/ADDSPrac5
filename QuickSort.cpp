@@ -32,7 +32,7 @@ std::vector<int> QuickSort::sorterFunction(std::vector<int> list, int start, int
         return newListA;
     }
 
-    std::swap(list[2], list[end]);
+    std::swap(list[start + 2], list[end]);
 
     //main logic
 
@@ -57,8 +57,12 @@ std::vector<int> QuickSort::sorterFunction(std::vector<int> list, int start, int
     std::vector<int> listA;
     std::vector<int> listB;
 
-    listA = sorterFunction(list, start, pivot_index - 1);
-    listB = sorterFunction(list, pivot_index + 1, end);
+    if (pivot_index != start){
+        listA = sorterFunction(list, start, pivot_index - 1);
+    }
+    if (pivot_index != end){
+        listB = sorterFunction(list, pivot_index + 1, end);
+    }
 
     listA.insert(listA.end(), list[pivot_index]);
     listA.insert(listA.end(), listB.begin(), listB.end());

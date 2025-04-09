@@ -2,22 +2,43 @@
 #include "QuickSort.h"
 #include "RecursiveBinarySearch.h"
 #include <iostream>
-#include <sstream>
+#include <string>
 
 int main(){
 
-    std::vector<int> list = {4, 5, 7, 9, 2, 5, 7, 3};
+    //assign vector
+    std::vector<int> list;
 
-    RecursiveBinarySearch a;
+    std::string a;
+    getline(std::cin, a);
 
-    bool b = a.search(list, 0);
+    //change from string to int
+    for (int i = 0; i < a.length(); i++){
+        if (a[i] != ' '){
+            list.push_back(int(a[i]) - 48);
+        }
+    }
 
-    // for (int i = 0; i < 8; i++){
-    //     std::cout << list[i] << " ";
-    // }
-    // std::cout << "\n";
+    //sort list
+    QuickSort q;
+    list = q.sort(list);
 
-    std::cout << b << "\n";
+    //find bool
+    RecursiveBinarySearch r;
+    bool b = r.search(list, 1);
+
+    //output
+    if (b == 0){
+        std::cout << "false ";
+    }
+    else {
+        std::cout << "true ";
+    }
+
+    for (int i = 0; i < list.size(); i++){
+        std::cout << list[i] << " ";
+    }
+    std::cout << "\n";
 
     return 0;
 }

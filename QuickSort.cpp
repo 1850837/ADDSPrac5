@@ -1,9 +1,4 @@
 #include "QuickSort.h"
-#include <iostream>
-
-// QuickSort::QuickSort(){
-
-// }
 
 std::vector<int> QuickSort::sort(std::vector<int> list){
 
@@ -21,8 +16,6 @@ std::vector<int> QuickSort::sorterFunction(std::vector<int> list, int start, int
 
     //case where length of subarray = 1
     if (end - start <= 0){
-        std::cout << "Hmm " << list[start] << "\n";
-
         std::vector<int> newList = {list[start]};
         return newList;
     }
@@ -35,8 +28,6 @@ std::vector<int> QuickSort::sorterFunction(std::vector<int> list, int start, int
             list[end] = dummy;
         }
 
-        std::cout << "List[start] = " << list[start] << " and list[end] = " << list[end] << "\n";
-        
         std::vector<int> newListA = {list[start], list[end]};
         return newListA;
     }

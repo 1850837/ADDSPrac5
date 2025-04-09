@@ -5,8 +5,8 @@
 
 class RecursiveBinarySearch{
     public:
-    std::vector<int> sort(std::vector<int> list);
-    std::vector<int> sortingYay(std::vector<int> list, int object, int start, int end);
+    bool search(std::vector<int>, int);
+    int searchingFunction(std::vector<int> list, int object, int start, int end);
 };
 
 #endif

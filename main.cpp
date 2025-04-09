@@ -13,10 +13,20 @@ int main(){
     getline(std::cin, a);
 
     //change from string to int
+    std::string dummyString = "";
     for (int i = 0; i < a.length(); i++){
         if (a[i] != ' '){
-            list.push_back(int(a[i]) - 48);
+            // list.push_back(int(a[i]) - 48);
+            dummyString = dummyString + a[i];
         }
+        else if (a[i] == ' '){
+            list.push_back(stoi(dummyString));
+            dummyString = "";
+        }
+    }
+
+    if (dummyString != ""){
+        list.push_back(stoi(dummyString));
     }
 
     //sort list
